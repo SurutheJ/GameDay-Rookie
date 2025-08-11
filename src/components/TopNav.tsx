@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 
 const TopNav = () => {
@@ -16,15 +16,6 @@ const TopNav = () => {
           >
             <ArrowLeft className="mr-1" />
             Back
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            aria-label="Go home"
-            onClick={() => navigate("/")}
-          >
-            <Home className="mr-1" />
-            Home
           </Button>
         </div>
         <Link
