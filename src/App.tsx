@@ -11,6 +11,7 @@ import LiveCompanion from "./pages/LiveCompanion";
 import CheatSheet from "./pages/CheatSheet";
 import PlayerPathway from "./pages/PlayerPathway";
 import Footer from "./components/Footer";
+import TopNav from "./components/TopNav";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <TopNav />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/guide/basketball" element={<GuideBasketball />} />
