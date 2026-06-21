@@ -108,4 +108,4 @@ React · Tailwind CSS · Vite · Lovable
 
 ---
 
-[**Read the full discovery document**](#) — How I started with one product, talked to real people, and ended up building something completely different.
+[**Read the full discovery document**](https://drive.google.com/file/d/1vTh1_xC6RHLfX49Ej9xczLWiHQ1sJBhJ/view?usp=sharing) — How I started with one product, talked to real people, and ended up building something completely different.
