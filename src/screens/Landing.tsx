@@ -65,30 +65,19 @@ const Landing = ({ goTo }: Props) => {
           className="mx-auto mt-8 w-[280px] h-[160px] bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden relative cursor-pointer transition-colors duration-200 hover:bg-[#222222] hover:border-[#E8593C] group"
         >
           <svg viewBox="0 0 280 160" width="280" height="160">
-            <rect x="10" y="10" width="260" height="140" rx="8" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
-            <line x1="140" y1="10" x2="140" y2="150" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
-            <circle cx="140" cy="80" r="28" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
-            <rect x="10" y="52" width="50" height="56" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.3" />
-            <rect x="220" y="52" width="50" height="56" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.3" />
-            <path d="M 10,35 Q 85,80 10,125" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
-            <path d="M 270,35 Q 195,80 270,125" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
-            <circle cx="16" cy="80" r="6" fill="none" stroke="#E8593C" strokeWidth="1.5" opacity="0.8" />
-            <circle cx="264" cy="80" r="6" fill="none" stroke="#E8593C" strokeWidth="1.5" opacity="0.8" />
-            <circle cx="140" cy="80" r="3" fill="#E8593C" opacity="0.6" />
+            <rect x="10" y="10" width="260" height="140" rx="8" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" className="transition-opacity group-hover:opacity-60" />
+            <line x1="140" y1="10" x2="140" y2="150" stroke="#E8593C" strokeWidth="1" opacity="0.4" className="transition-opacity group-hover:opacity-60" />
+            <circle cx="140" cy="80" r="28" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" className="transition-opacity group-hover:opacity-60" />
+            <rect x="10" y="52" width="50" height="56" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.3" className="transition-opacity group-hover:opacity-50" />
+            <rect x="220" y="52" width="50" height="56" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.3" className="transition-opacity group-hover:opacity-50" />
+            <path d="M 10,35 Q 85,80 10,125" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" className="transition-opacity group-hover:opacity-60" />
+            <path d="M 270,35 Q 195,80 270,125" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" className="transition-opacity group-hover:opacity-60" />
+            <circle cx="16" cy="80" r="6" fill="none" stroke="#E8593C" strokeWidth="1.5" opacity="0.8" className="transition-opacity group-hover:opacity-100" />
+            <circle cx="264" cy="80" r="6" fill="none" stroke="#E8593C" strokeWidth="1.5" opacity="0.8" className="transition-opacity group-hover:opacity-100" />
+            <circle cx="140" cy="80" r="3" fill="#E8593C" opacity="0.6" className="transition-opacity group-hover:opacity-100" />
           </svg>
           <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-              fontSize: "12px",
-              fontWeight: 700,
-              color: "white",
-              opacity: 0.3,
-              letterSpacing: "0.15em",
-              textAlign: "center",
-            }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-white opacity-30 tracking-[0.15em] text-center transition-opacity group-hover:opacity-80"
           >
             TAP TO BEGIN
           </div>
