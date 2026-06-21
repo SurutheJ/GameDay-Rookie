@@ -1,41 +1,85 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import GuideBasketball from "./pages/GuideBasketball";
-import Quiz from "./pages/Quiz";
-import LiveCompanion from "./pages/LiveCompanion";
-import CheatSheet from "./pages/CheatSheet";
-import PlayerPathway from "./pages/PlayerPathway";
-import Footer from "./components/Footer";
-import TopNav from "./components/TopNav";
+import { useState, useEffect } from "react";
+import NavBar from "./components/NavBar";
+import Landing from "./screens/Landing";
+import LevelSelect from "./screens/LevelSelect";
+import LearnCard from "./screens/LearnCard";
+import Quiz from "./screens/Quiz";
+import YoureReady from "./screens/YoureReady";
 
-const queryClient = new QueryClient();
+const App = () => {
+  const [currentScreen, setCurrentScreen] = useState(1);
+  const [currentLevel, setCurrentLevel] = useState(1);
+  const [history, setHistory] = useState<number[]>([1]);
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <TopNav />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/guide/basketball" element={<GuideBasketball />} />
-          <Route path="/guide/basketball/quiz" element={<Quiz />} />
-          <Route path="/watch/live-companion" element={<LiveCompanion />} />
-          <Route path="/cheatsheet" element={<CheatSheet />} />
-          <Route path="/play/pathway" element={<PlayerPathway />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  const goTo = (screen: number) => {
+    setHistory((prev) => [...prev, screen]);
+    setCurrentScreen(screen);
+  };
+
+  const goBack = () => {
+    if (history.length > 1) {
+      const newHistory = history.slice(0, -1);
+      setHistory(newHistory);
+      setCurrentScreen(newHistory[newHistory.length - 1]);
+    }
+  };
+
+  const goHome = () => {
+    setHistory([1]);
+    setCurrentScreen(1);
+  };
+
+  useEffect(() => {
+    document.body.style.background = "#ffffff";
+    document.body.style.fontFamily = "'Inter', system-ui, sans-serif";
+    document.body.style.color = "#1A1A1A";
+    document.body.style.margin = "0";
+  }, []);
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        maxWidth: "390px",
+        margin: "0 auto",
+        minHeight: "100vh",
+        overflow: "hidden",
+        background: "white",
+        fontFamily: "'Inter', system-ui, sans-serif",
+      }}
+    >
+      {currentScreen === 1 && <Landing goTo={goTo} />}
+      {currentScreen === 2 && (
+        <>
+          <NavBar onBack={goBack} onHome={goHome} showBack={true} />
+          <LevelSelect goTo={goTo} setCurrentLevel={setCurrentLevel} />
+        </>
+      )}
+      {currentScreen === 3 && (
+        <>
+          <NavBar onBack={goBack} onHome={goHome} showBack={true} />
+          <LearnCard goTo={goTo} currentLevel={currentLevel} />
+        </>
+      )}
+      {currentScreen === 4 && (
+        <>
+          <NavBar onBack={goBack} onHome={goHome} showBack={true} />
+          <Quiz goTo={goTo} currentLevel={currentLevel} />
+        </>
+      )}
+      {currentScreen === 5 && (
+        <>
+          <NavBar onBack={goBack} onHome={goHome} showBack={false} />
+          <YoureReady
+            goTo={goTo}
+            goHome={goHome}
+            currentLevel={currentLevel}
+            setCurrentLevel={setCurrentLevel}
+          />
+        </>
+      )}
+    </div>
+  );
+};
 
 export default App;
