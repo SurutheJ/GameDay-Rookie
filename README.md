@@ -2,7 +2,7 @@
 
 **Turn a basketball nobody into a confident fan in 15 minutes.**
 
-[**→ Open the app**](https://gameday-rookie.lovable.app) · [Discovery document](#)
+[**→ Open the app**](https://gameday-rookie.lovable.app) · [Discovery document](https://drive.google.com/file/d/1vTh1_xC6RHLfX49Ej9xczLWiHQ1sJBhJ/view?usp=sharing)
 
 **Author:** Suruthe Jayachandran
 
