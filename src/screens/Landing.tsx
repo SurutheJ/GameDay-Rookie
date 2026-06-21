@@ -62,19 +62,7 @@ const Landing = ({ goTo }: Props) => {
 
         <div
           onClick={() => goTo(2)}
-          style={{
-            marginTop: "32px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            width: "280px",
-            height: "160px",
-            background: "#1A1A1A",
-            border: "1px solid #2A2A2A",
-            borderRadius: "16px",
-            overflow: "hidden",
-            position: "relative",
-            cursor: "pointer",
-          }}
+          className="mx-auto mt-8 w-[280px] h-[160px] bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl overflow-hidden relative cursor-pointer transition-colors duration-200 hover:bg-[#222222] hover:border-[#E8593C] group"
         >
           <svg viewBox="0 0 280 160" width="280" height="160">
             <rect x="10" y="10" width="260" height="140" rx="8" fill="none" stroke="#E8593C" strokeWidth="1" opacity="0.4" />
